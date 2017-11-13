@@ -25,7 +25,8 @@ import { SchoolModule } from './school/school.module';
     BrowserModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(
-      appRoutes
+      appRoutes,
+      { useHash: true }
     )
   ],
   providers: [],
