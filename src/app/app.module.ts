@@ -1,10 +1,15 @@
+import { AboutMeModule } from './about-me/about-me.module';
+import { HomeModule } from './home/home.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopNavModule } from './top-nav/top-nav.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
+import { appRoutes } from './app.routes';
+import { WorksModule } from './works/works.module';
+import { SchoolModule } from './school/school.module';
 
 @NgModule({
   declarations: [
@@ -12,9 +17,16 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     TopNavModule,
+    HomeModule,
+    WorksModule,
+    AboutMeModule,
+    SchoolModule,
     BrowserAnimationsModule,
     BrowserModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    RouterModule.forRoot(
+      appRoutes
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

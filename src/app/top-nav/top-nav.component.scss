@@ -1,12 +1,26 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import "../../assets/scss/colors";
+
 .top-nav {
+  a {
+    &:hover {
+      color: $white;
+      text-decoration: none;
+    }
+  }
   .mat-button {
     height: 100%;
     line-height: 65px;
+    border-top: solid 3px transparent;
+    border-radius: 0px;
+
     .mat-icon {
       top: 4px;
       position: relative
+    }
+
+    &:hover, &.active {
+      border-top-color: $accent1;
     }
 
     &:hover {
@@ -16,7 +30,7 @@
   .mat-toolbar-single-row {
     padding: 0px;
       .mat-toolbar-single-row {
-      padding: 0 4px 0 16px;
+      padding: 0 2px 0 16px;
     }
   }
 
@@ -27,7 +41,7 @@
   }
 
   .profile-icon {
-    background: white;
+    background: $white;
     display: block;
     height: px;
     width: 40px;
@@ -35,11 +49,11 @@
     border-radius: 50px;
     font-size: 16px;
     font-weight: 600;
-    color: $warn;
+    color: $primary1;
   }
 
   .top-nav-icon {
-    fill: white;
+    fill: $white;
     position: relative;
     top: 4px;
   }
