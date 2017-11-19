@@ -2,12 +2,17 @@
 @import "../../assets/scss/main";
 
 .home {
-  @include full-background('../../assets/images/bg.jpg');
+  @include full-background('https://drive.google.com/uc?id=1nmbZMDuDsaDVjMQK2zB4OAu9HQhx7yhJ');
 }
+
+.home-layer {
+ @include fade-out-bg;
+}
+
 
 .absolute-center {
   @include absolute-center(400px, 190px);
-  color: $primary1;
+  color: $white;
   text-align: center;
   text-shadow: 1px 1px #bbafaf;
   h1 {

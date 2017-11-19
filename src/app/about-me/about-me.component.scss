@@ -1,6 +1,8 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import "../../assets/scss/main";
 
+$blob_height: 350px;
+
 .cover {
   height: calc(100vh - 56px);
   position: absolute;
@@ -9,23 +11,34 @@
 }
 
 .about-me {
-  @include full-background('../../assets/images/bg1.jpg');
+  @include full-background('https://drive.google.com/uc?id=1JZbB_CihB-zXdAuJo_d3xwtu6j44hIjX');
 }
+
+.about-me-layer {
+  @include fade-out-bg;
+ }
 
 .background {
   @include absolute-center(60%, 60%);
-  background: $white;
+  background: #727375;
   border-radius: 10px;
+  min-width: 800px;
   opacity: 0.5;
-  min-height: 400px;
+  min-height: $blob_height;
 }
 
 .overlay {
   @include absolute-center(60%, 60%);
-  color: $primary1;
+  // color: $primary1;
+  color: $white;
+  min-width: 800px;
   font-size: 1.25rem;
   padding: 20px;
-  min-height: 400px;
+  min-height: $blob_height;
+
+  ul li {
+    margin-bottom: 20px;
+  }
 }
 
 
@@ -47,7 +60,18 @@
 
 @include media-breakpoint-down(sm) { 
   .overlay, .background {
-    width: 90%;
+    min-width: 400px;
+    width: 98%;
     font-size: 1rem;
+    min-height: 300px;
+  }
+}
+
+@include media-breakpoint-down(xs) { 
+  .overlay, .background {
+    // min-width: 400px;
+    width: 100%;
+    border-radius: 0;
+    min-height: 100%;
   }
 }
