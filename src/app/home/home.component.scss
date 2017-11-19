@@ -1,27 +1,15 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
-@import "../../assets/scss/colors";
+@import "../../assets/scss/main";
 
 .home {
-  height: 100%;
-  position: relative;
-  top: 0px;
-  background: url('../../assets/images/bg.jpg');
-  background-size:cover;
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat:no-repeat;
+  @include full-background('../../assets/images/bg.jpg');
 }
 
 .absolute-center {
-  width: 400px;
-  height: 300px;
-  overflow: auto;
-  margin: auto;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+  @include absolute-center(400px, 190px);
   color: $primary1;
   text-align: center;
-
+  text-shadow: 1px 1px #bbafaf;
   h1 {
     font-size: 2.3rem;
   }
