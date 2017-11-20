@@ -8,8 +8,8 @@
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
   filter: grayscale(100%);
+  animation: color-me 2s normal forwards;
 }
 
 @mixin fade-out-bg {
@@ -30,4 +30,9 @@
   right: 0;
   width: $width;
   height: $height;
+}
+
+@keyframes color-me {
+  from {filter: grayscale(100%);}
+  to {filter: grayscale(0%);}
 }
