@@ -1,16 +1,15 @@
-@import 'node_modules/bootstrap/scss/bootstrap';
 @import "../../assets/scss/main";
 
 .home {
   @include full-background('https://drive.google.com/uc?id=1nmbZMDuDsaDVjMQK2zB4OAu9HQhx7yhJ');
 }
 
-.home-layer {
+.home__layer {
  @include fade-out-bg;
 }
 
 
-.absolute-center {
+.home__text {
   @include absolute-center(400px, 190px);
   color: $white;
   text-align: center;
@@ -25,7 +24,7 @@
   }
 }
 
-@include media-breakpoint-down(md) { 
+@include media-breakpoint-down(md) {
   .home {
     background-position: 75% 50%;
   }

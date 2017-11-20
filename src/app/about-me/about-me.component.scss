@@ -1,77 +1,81 @@
-@import 'node_modules/bootstrap/scss/bootstrap';
 @import "../../assets/scss/main";
 
 $blob_height: 350px;
 
-.cover {
-  height: calc(100vh - 56px);
-  position: absolute;
-  width: 100%;
-  margin-top: 56px;
-}
-
 .about-me {
   @include full-background('https://drive.google.com/uc?id=1JZbB_CihB-zXdAuJo_d3xwtu6j44hIjX');
-}
 
-.about-me-layer {
-  @include fade-out-bg;
- }
+  &__layer {
+    @include fade-out-bg;
+  }
 
-.background {
-  @include absolute-center(60%, 60%);
-  background: #727375;
-  border-radius: 10px;
-  min-width: 800px;
-  opacity: 0.5;
-  min-height: $blob_height;
-}
+  &__background {
+    @include absolute-center(60%, 60%);
+    background: #727375;
+    border-radius: 10px;
+    min-width: 800px;
+    opacity: 0.5;
+    min-height: $blob_height;
+  }
 
-.overlay {
-  @include absolute-center(60%, 60%);
-  // color: $primary1;
-  color: $white;
-  min-width: 800px;
-  font-size: 1.25rem;
-  padding: 20px;
-  min-height: $blob_height;
+  &__overlay {
+    @include absolute-center(60%, 60%);
+    color: $white;
+    min-width: 800px;
+    font-size: 1.25rem;
+    padding: 20px;
+    min-height: $blob_height;
 
-  ul li {
-    margin-bottom: 20px;
+    .list__item {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    display: none;
+
+    @include respond-to('xxs') {
+      display: block;
+    }
   }
 }
 
-
-@include media-breakpoint-down(xl) { 
+@include media-breakpoint-down(xl) {
   .about-me {
     background-position: 75% 50%;
   }
 }
 
-@include media-breakpoint-down(md) { 
+@include media-breakpoint-down(md) {
   .about-me {
     background-position: 95% 50%;
-  }
 
-  .overlay, .background {
-    width: 80%;
-  }
-}
-
-@include media-breakpoint-down(sm) { 
-  .overlay, .background {
-    min-width: 400px;
-    width: 98%;
-    font-size: 1rem;
-    min-height: 300px;
+    &__overlay, &__background {
+      width: 80%;
+      min-width: 650px;
+      font-size: 1rem;
+    }
   }
 }
 
-@include media-breakpoint-down(xs) { 
-  .overlay, .background {
-    // min-width: 400px;
-    width: 100%;
-    border-radius: 0;
-    min-height: 100%;
+@include media-breakpoint-down(sm) {
+  .about-me {
+    &__overlay, &__background {
+      min-width: 400px;
+      width: 98%;
+      font-size: 0.9rem;
+      min-height: 300px;
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .about-me {
+    &__overlay, &__background {
+      width: 100%;
+      border-radius: 0;
+      min-height: 100%;
+    }
   }
 }

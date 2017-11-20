@@ -1,0 +1,24 @@
+// breakpoints
+$breakpoints: (
+  'xxs': (max-width: 576px),
+  'xs': (max-width: 768px),
+  'sm': (max-width: 992px),
+  'md': (max-width: 1024px),
+  'lg': (max-width: 1200px),
+  'xlg': (max-width: 1440px),
+  'xxlg': (max-width: 1600px)
+);
+
+
+@mixin respond-to($name) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $name) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  } @else {
+    @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
+    + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}

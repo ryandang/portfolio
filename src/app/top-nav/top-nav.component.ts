@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'top-nav',
@@ -6,11 +6,4 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./top-nav.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class TopNavComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class TopNavComponent {}

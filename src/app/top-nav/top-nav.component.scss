@@ -1,73 +1,88 @@
-@import 'node_modules/bootstrap/scss/bootstrap';
-@import "../../assets/scss/colors";
+@import "../../assets/scss/main";
 
-.top-nav {
-  position: absolute;
-  width: 100%;
-  z-index: 1000;
-
-  a {
-    &:hover {
-      color: $white;
-      text-decoration: none;
-    }
-  }
-  .mat-button {
-    height: 100%;
-    line-height: 65px;
-    border-top: solid 3px transparent;
-    border-radius: 0px;
-
-    .mat-icon {
-      top: 4px;
-      position: relative
-    }
-
-    &:hover, &.active {
-      border-top-color: $accent1;
-    }
-
-    &:hover {
-      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-    }
-  }
-  .mat-toolbar-single-row {
-    padding: 0px;
-      .mat-toolbar-single-row {
-      padding: 0 2px 0 16px;
-    }
-  }
-
-  .example-fill-remaining-space {
-    // This fills the remaining space, by using flexbox. 
-    // Every toolbar row uses a flexbox row layout.
-    flex: 1 1 auto;
-  }
-
-  .profile-icon {
-    background: $white;
-    display: block;
-    height: px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: 600;
-    color: $primary1;
-  }
-
-  .top-nav-icon {
-    fill: $white;
-    position: relative;
-    top: 4px;
+@mixin hover-link {
+  &:hover,
+  &:focus {
+    color: $white;
+    text-decoration: none;
   }
 }
 
-@include media-breakpoint-down(xs) { 
-  .top-nav {
-    .mat-button {
-      padding: 0px;
-      min-width: 60px;
+@mixin active-link {
+  border-top-color: $accent1;
+}
+
+.nav {
+  background: $primary1;
+  height: $top-nav-height;
+  position: relative;
+
+  &__list {
+    list-style: none;
+    padding-left: 0;
+    position: absolute;
+    right: 2px;
+    height: 100%;
+
+    &__item {
+      display: inline-block;
+      height: $top-nav-height;
+      position: relative;
+      right: 0;
+      top: 0px;
     }
+
+    &__icon {
+      fill: $white;
+      -webkit-text-fill-color: $white;
+      position: relative;
+      top: 5px;
+    }
+  }
+
+  &__link {
+    border-top: solid 3px transparent;
+    color: $white;
+    display: block;
+    height: 100%;
+    font-size: 14px;
+    padding: 5px 10px 0px 10px;
+
+    @include hover-link;
+
+    &:hover {
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+
+      @include active-link;
+    }
+
+    // &__text {
+    //   @include respond-to('xxs') {
+    //     display: none;
+    //   }
+    // }
+
+    &--active {
+      @include active-link;
+    }
+  }
+
+  &__logo {
+    @include hover-link;
+  }
+
+  &__profile-icon {
+    background: $white;
+    border-radius: 50px;
+    color: $primary1;
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 40px;
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: center;
+
+    @include square(40px);
   }
 }

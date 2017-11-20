@@ -32,6 +32,18 @@
   height: $height;
 }
 
+@mixin cover {
+  height: calc(100vh - 60px);
+  position: absolute;
+  overflow: auto;
+  width: 100%;
+}
+
+@mixin square($value) {
+  width: $value;
+  height: $value;
+}
+
 @keyframes color-me {
   from {filter: grayscale(100%);}
   to {filter: grayscale(0%);}
