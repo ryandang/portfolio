@@ -11,7 +11,8 @@
 
 .home__text {
   @include absolute-center(400px, 190px);
-  color: $white;
+  // color: $white;
+  // color: #CCCCCC;
   text-align: center;
   text-shadow: 1px 1px #bbafaf;
   h1 {

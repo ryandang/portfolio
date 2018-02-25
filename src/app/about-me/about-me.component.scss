@@ -1,6 +1,9 @@
 @import "../../assets/scss/main";
 
-$blob_height: 350px;
+@mixin blob() {
+  @include absolute-center(60%, 80%);
+  min-width: 800px;
+}
 
 .about-me {
   @include full-background('https://drive.google.com/uc?id=1JZbB_CihB-zXdAuJo_d3xwtu6j44hIjX');
@@ -10,33 +13,29 @@ $blob_height: 350px;
   }
 
   &__background {
-    @include absolute-center(60%, 60%);
-    background: #727375;
+    background: #cccccc;
     border-radius: 10px;
-    min-width: 800px;
     opacity: 0.5;
-    min-height: $blob_height;
+    position: absolute;
+    top: 0px;
+
+    @include square(100%);
   }
 
   &__overlay {
-    @include absolute-center(60%, 60%);
-    color: $white;
-    min-width: 800px;
     font-size: 1.25rem;
     padding: 20px;
-    min-height: $blob_height;
 
-    .list__item {
-      margin-bottom: 20px;
-    }
+    @include blob;
   }
 
   &__header {
     text-align: center;
-    display: none;
+  }
 
-    @include respond-to('xxs') {
-      display: block;
+  &__list {
+    &__item {
+      margin-bottom: 20px;
     }
   }
 }
@@ -51,28 +50,25 @@ $blob_height: 350px;
   .about-me {
     background-position: 95% 50%;
 
-    &__overlay, &__background {
+    &__overlay {
       width: 80%;
       min-width: 650px;
-      font-size: 1rem;
     }
   }
 }
 
 @include media-breakpoint-down(sm) {
   .about-me {
-    &__overlay, &__background {
+    &__overlay {
       min-width: 400px;
       width: 98%;
-      font-size: 0.9rem;
-      min-height: 300px;
     }
   }
 }
 
 @include media-breakpoint-down(xs) {
   .about-me {
-    &__overlay, &__background {
+    &__overlay {
       width: 100%;
       border-radius: 0;
       min-height: 100%;
